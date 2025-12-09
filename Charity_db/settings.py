@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework",
+    "djoser",
+    "main",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -74,8 +78,11 @@ WSGI_APPLICATION = 'Charity_db.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "charity",
+        'HOST': "localhost",
+        'USER': "root",
+        'PASSWORD': "257322",
     }
 }
 
@@ -120,3 +127,30 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = "core.User"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
+
+PUBLIC_VIEWS = [
+    'login',
+    'register',
+]
+
+DJOSER = {
+    "LOGIN_FIELD": "email",
+    "SERIALIZERS": {
+        "user_create": "core.serializers.UserCreateSerializer",
+        "user": "core.serializers.UserSerializer",
+        "current_user": "core.serializers.UserSerializer"
+    }
+}
+
+LOGIN_URL = '/core/login/'
