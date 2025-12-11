@@ -84,13 +84,13 @@ The project contains the following main modules:
 
 Authentication is implemented using:
 
-### ✔ **Djoser**
+### **Djoser**
 Handles:
 - Registration
 - Activation
 - User management
 
-### ✔ **JWT Authentication**
+### **JWT Authentication**
 Using:  
 ```
 djangorestframework-simplejwt
@@ -113,7 +113,7 @@ Provides:
 
 ---
 
-# 🚀 **Project Structure**
+# **Project Structure**
 
 ```
 charity_backend/
@@ -155,7 +155,7 @@ charity_backend/
 
 ---
 
-# ⚙️ **Settings (Authentication Setup)**
+# **Settings (Authentication Setup)**
 
 ### Install Required Packages
 
@@ -208,7 +208,7 @@ path("auth/", include("djoser.urls.jwt")),
 
 ---
 
-# 🌍 **API Endpoints Overview**
+# **API Endpoints Overview**
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -233,10 +233,10 @@ path("auth/", include("djoser.urls.jwt")),
 
 In this backend we have:
 
-✔ Full database system  
-✔ Authentication (Djoser + JWT)  
-✔ Donation system  
-✔ Project & volunteers module  
-✔ Articles/news handling  
-✔ Contact messages API  
-✔ Clean, scalable Django architecture  
+Full database system  
+Authentication (Djoser + JWT)  
+Donation system  
+Project & volunteers module  
+Articles/news handling  
+Contact messages API  
+Clean, scalable Django architecture  
